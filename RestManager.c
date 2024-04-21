@@ -7,26 +7,22 @@
 #define MAX_RESERVATIONS 50
 #define MAX_NAME_LENGTH 50
 
-// Structure for menu items
 typedef struct {
     char name[MAX_NAME_LENGTH];
     float price;
     int quantity;
 } MenuItem;
 
-// Structure for orders
 typedef struct {
     char name[MAX_NAME_LENGTH];
     int quantity;
 } Order;
 
-// Structure for reservations
 typedef struct {
     char name[MAX_NAME_LENGTH];
     int num_people;
 } Reservation;
 
-// Global variables
 MenuItem menu[MAX_ITEMS];
 Order orders[MAX_ORDERS];
 Reservation reservations[MAX_RESERVATIONS];
@@ -34,7 +30,6 @@ int num_menu_items = 0;
 int num_orders = 0;
 int num_reservations = 0;
 
-// Function prototypes
 void addMenuItem();
 void takeOrder();
 void manageInventory();
@@ -97,7 +92,6 @@ void addMenuItem() {
         printf("Menu is full! Cannot add more items.\n");
         return;
     }
-
     printf("Enter name of the item: ");
     scanf("%s", menu[num_menu_items].name);
     printf("Enter price of the item: ");
@@ -159,7 +153,6 @@ void makeReservation() {
 
 void displayMenu() {
     int i;
-
     printf("\nMenu:\n");
     printf("------------------------------------------------\n");
     printf("Name\t\tPrice\t\tQuantity\n");
@@ -172,7 +165,6 @@ void displayMenu() {
 
 void displayOrders() {
     int i;
-
     printf("\nOrders:\n");
     printf("--------------------------------------\n");
     printf("Item\t\tQuantity\n");
@@ -182,10 +174,8 @@ void displayOrders() {
     }
     printf("--------------------------------------\n");
 }
-
 void displayReservations() {
     int i;
-
     printf("\nReservations:\n");
     printf("--------------------------------------\n");
     printf("Name\t\tNumber of People\n");
